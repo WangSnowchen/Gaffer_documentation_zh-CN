@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Gaffer 中文文档</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="记录所学的知识，分享所学的知识">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/pagetoc.css">
+        <link rel="stylesheet" href=".\mdbook-admonish.css">
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="spacer"></li><li class="chapter-item "><div>用户文档</div></li><li class="chapter-item "><a href="homepage.html">主页</a></li><li class="chapter-item "><a href="入门/入门.html">入门</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="入门/安装Gaffer.html">安装Gaffer</a></li><li class="chapter-item "><a href="入门/第一次启动Gaffer.html">第一次启动Gaffer</a></li><li class="chapter-item "><a href="入门/tutorial01_搭建gaffer_bot.html">教程:搭建一个能够正常渲染的Gaffer机器人</a></li><li class="chapter-item "><a href="入门/setting_gaffer_command.html">设置"gaffer"环境变量</a></li><li class="chapter-item "><a href="入门/配置第三方程序.html">为第三方应用程序配置</a></li></ol></li><li class="chapter-item "><a href="如何使用节点/如何使用节点.html">如何使用节点</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="如何使用节点/box_node.html">Box Node</a></li><li class="chapter-item "><a href="如何使用节点/spreadsheet.html">Spreadsheet Node - 表格节点</a></li><li class="chapter-item "><a href="如何使用节点/Context.html">Contexts</a></li><li class="chapter-item "><a href="如何使用节点/获取最佳性能.html">获取最佳性能</a></li><li class="chapter-item "><a href="如何使用节点/使用性能监视器.html">使用性能监视器</a></li><li class="chapter-item "><a href="如何使用节点/使用OSLCode节点.html">教程:使用OSLCode节点</a></li><li class="chapter-item "><a href="如何使用节点/设置一个自定义的表格节点.html">教程:设置一个自定义的表格节点</a></li></ol></li><li class="chapter-item "><a href="场景/Scenes.html">场景</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="场景/场景剖析.html">场景剖析</a></li><li class="chapter-item "><a href="场景/相机剖析.html">相机剖析</a></li><li class="chapter-item "><a href="场景/Camera.html">"Camera"</a></li><li class="chapter-item "><a href="场景/灯光链接.html">灯光链接</a></li></ol></li><li class="chapter-item "><a href="二维图像的处理/二维图像的处理.html">二维图像的处理</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="二维图像的处理/图像剖析.html">图像剖析</a></li></ol></li><li class="chapter-item "><a href="PythonScriptingAPI/PythonScriptingAPI.html">如何使用Python_Scripting_API</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="PythonScriptingAPI/Python编辑器.html">Python编辑器</a></li><li class="chapter-item "><a href="PythonScriptingAPI/使用Python来编辑节点.html">教程:使用Python来编辑节点</a></li><li class="chapter-item "><a href="PythonScriptingAPI/检查场景.html">教程:检查场景</a></li><li class="chapter-item "><a href="PythonScriptingAPI/自定义全局的Context变量.html">教程:启动配置01;自定义全局的Context变量</a></li><li class="chapter-item "><a href="PythonScriptingAPI/自定义书签.html">教程:启动配置02;自定义书签</a></li><li class="chapter-item "><a href="PythonScriptingAPI/自定义节点菜单.html">教程:启动配置03;自定义节点菜单</a></li></ol></li><li class="chapter-item "><a href="界面/界面.html">界面</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="界面/如何控制与使用快捷键.html">如何控制与使用快捷键</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><div>补充资料</div></li><li class="chapter-item "><a href="参考/参考.html">参考</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="参考/节点参考.html">节点参考</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="参考/节点参考/Gaffer.html">Gaffer</a></li><li class="chapter-item "><a href="参考/节点参考/GafferAppleseed.html">GafferAppleseed</a></li><li class="chapter-item "><a href="参考/节点参考/GafferArnold.html">GafferArnold</a></li><li class="chapter-item "><a href="参考/节点参考/GafferCycles.html">GafferCycles</a></li><li class="chapter-item "><a href="参考/节点参考/GafferDispatch.html">GafferDispatch</a></li><li class="chapter-item "><a href="参考/节点参考/GafferImage.html">GafferImage</a></li><li class="chapter-item "><a href="参考/节点参考/GafferOSL.html">GafferOSL</a></li><li class="chapter-item "><a href="参考/节点参考/GafferScene.html">GafferScene</a></li><li class="chapter-item "><a href="参考/节点参考/GafferUSD.html">GafferUSD</a></li><li class="chapter-item "><a href="参考/节点参考/GafferVDB.html">GafferVDB</a></li></ol></li><li class="chapter-item "><a href="参考/脚本参考.html">脚本参考</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="参考/脚本参考/CommonOperations.html">Common Operations</a></li><li class="chapter-item "><a href="参考/脚本参考/常用命令示范.html">常用命令示范</a></li><li class="chapter-item "><a href="参考/脚本参考/字符串替代.html">字符串替代</a></li><li class="chapter-item "><a href="参考/脚本参考/表达式.html">表达式</a></li><li class="chapter-item "><a href="参考/脚本参考/Set表达式.html">Set表达式</a></li><li class="chapter-item "><a href="参考/脚本参考/Metadata.html">Metadata</a></li></ol></li><li class="chapter-item "><a href="参考/命令行参考.html">命令行参考</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="参考/命令行参考/browser.html">browser</a></li><li class="chapter-item "><a href="参考/命令行参考/cli.html">cli</a></li><li class="chapter-item "><a href="参考/命令行参考/dispatch.html">dispatch</a></li><li class="chapter-item "><a href="参考/命令行参考/env.html">env</a></li><li class="chapter-item "><a href="参考/命令行参考/execute.html">execute</a></li><li class="chapter-item "><a href="参考/命令行参考/gui.html">gui</a></li><li class="chapter-item "><a href="参考/命令行参考/license.html">license</a></li><li class="chapter-item "><a href="参考/命令行参考/python.html">python</a></li><li class="chapter-item "><a href="参考/命令行参考/screengrab.html">screengrab</a></li><li class="chapter-item "><a href="参考/命令行参考/stats.html">stats</a></li><li class="chapter-item "><a href="参考/命令行参考/test.html">test</a></li><li class="chapter-item "><a href="参考/命令行参考/view.html">view</a></li></ol></li><li class="chapter-item "><a href="参考/Context变量.html">Context变量</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><a href="发行版本/ReleaseNotes.html">发行版本</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Gaffer 中文文档</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/WangSnowchen/Gaffer_documentation_zh-CN" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="readme"><a class="header" href="#readme">README</a></h1>
+<p>
+<div align="center">
+<img src="img/GafferLogoNav.svg">
+</div>
+</p>
+<p><img src="https://img.shields.io/badge/mdBook-v0.4.28-green.svg" alt="mdBook" />
+<img src="https://img.shields.io/badge/Gaffer-1.2.2.0-red.svg" alt="mdBook" /></p>
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="homepage.html#admonition-info"></a></p>
+</div>
+<div>
+<p>创建翻译项目基于Gaffer 1.2.2.0</p>
+</div>
+</div>
+<p>项目为Gaffer开源软件的中文Documentation，旨在让Gaffer这款开源软件获得更多的使用群体。<br />
+网页基于mdBook，英文原始Documentation位置在此处:<a href="https://www.gafferhq.org/documentation/1.2.2.0/index.html">Gaffer_Documentation</a>因为不是专业翻译，未免有笔误和错漏的地方，欢迎issue指出</p>
+<h2 id="翻译进度"><a class="header" href="#翻译进度">翻译进度:</a></h2>
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+入门
+<ul>
+<li><input disabled="" type="checkbox" checked=""/>
+安装Gaffer</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"/>
+如何使用节点</li>
+<li><input disabled="" type="checkbox"/>
+场景</li>
+<li><input disabled="" type="checkbox"/>
+二维图像的处理</li>
+<li><input disabled="" type="checkbox"/>
+如何使用Python_Scripting_API</li>
+<li><input disabled="" type="checkbox"/>
+界面</li>
+<li><input disabled="" type="checkbox"/>
+参考</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="入门"><a class="header" href="#入门">入门</a></h1>
+<p>可以在此处找到有关如何安装和配置 Gaffer 的信息和说明。</p>
+<h2 id="快速安装"><a class="header" href="#快速安装">快速安装</a></h2>
+<ul>
+<li><a href="%E5%85%A5%E9%97%A8/./%E5%AE%89%E8%A3%85Gaffer.html">安装Gaffer</a></li>
+<li><a href="%E5%85%A5%E9%97%A8/./%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8Gaffer.html">安装Gaffer</a></li>
+</ul>
+<p>安装Gaffer后，建议您按照教程<a href="%E5%85%A5%E9%97%A8/./tutorial01_%E6%90%AD%E5%BB%BAgaffer_bot.html">教程:搭建一个能够正常渲染的Gaffer机器人</a>熟悉应用程及其基本概念。</p>
+<h2 id="安装完成"><a class="header" href="#安装完成">安装完成</a></h2>
+<ul>
+<li><a href="%E5%85%A5%E9%97%A8/./setting_gaffer_command.html">设置&quot;gaffer&quot;环境变量</a></li>
+<li><a href="%E5%85%A5%E9%97%A8/./%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E7%A8%8B%E5%BA%8F.html">为第三方应用程序配置</a>  </li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="安装gaffer"><a class="header" href="#安装gaffer">安装Gaffer</a></h1>
+<p>Gaffer软件包是一个自包含的文件，因此您需要手动安装它，并在必要时手动配置它。一旦提取之后Gaffer目录包含完整的应用程序可供使用。</p>
+<div id="admonition-note" class="admonition warning">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="入门/安装Gaffer.html#admonition-note"></a></p>
+</div>
+<div>
+<p>为了与Linux/macOS最佳实践保持一致，我们将演示如何在/opt/目录中安装Gaffer。我们还使用Windows上的C:\software\作为示例安装路径。当然您也可以将它安装到系统上您具有写入和执行访问权限的任何位置。</p>
+</div>
+</div>
+<h2 id="在linux上安装"><a class="header" href="#在linux上安装">在linux上安装</a></h2>
+<p>在linux上安装Gaffer:</p>
+<ol>
+<li>下载<a href="https://github.com/GafferHQ/gaffer/releases/download/1.2.2.0/gaffer-1.2.2.0-linux.tar.gz">Gaffer</a></li>
+<li>打开终端</li>
+<li>提取文件:
+<pre><code>user@desktop ~ $ cd ~/Downloads
+user@desktop ~/Downloads $ sudo tar -xzf gaffer-1.2.2.0-linux.tar.gz -C /opt/
+</code></pre>
+</li>
+</ol>
+<p>Gaffer现在就安装到了<st style="background:#fbeee9">/opt/gaffer-1.2.2.0-linux</p></p>
+<h2 id="在windows上安装"><a class="header" href="#在windows上安装">在Windows上安装</a></h2>
+<p>在Windows上安装Gaffer:</p>
+<ol>
+<li>下载<a href="https://github.com/GafferHQ/gaffer/releases/download/1.2.2.0/gaffer-1.2.2.0-windows.zip">Gaffer</a></li>
+<li>提取文件(建议使用<a href="https://www.7-zip.org/">7-Zip</a>)</li>
+<li>将解压出来的<st style="background:#fbeee9">gaffer-1.2.2.0-windows</st>文件夹移动到你想安装的位置，比如<st style="background:#fbeee9">C:\software</p></li>
+</ol>
+<p>Gaffer现在安装到了<st style="background:#fbeee9">C:\software\gaffer-1.2.2.0-windows</st></p>
+<div id="admonition-note-1" class="admonition warning">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="入门/安装Gaffer.html#admonition-note-1"></a></p>
+</div>
+<div>
+<p>Gaffer需要在Windows上安装<a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft Visual C++ Redistributable</a>这需要在<a href="%E5%85%A5%E9%97%A8/./%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8Gaffer.html">启动</a>Gaffer之前<a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">下载</a>并安装。</p>
+</div>
+</div>
+<h2 id="在macos下安装"><a class="header" href="#在macos下安装">在macOS下安装</a></h2>
+<div id="admonition-note-2" class="admonition warning">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="入门/安装Gaffer.html#admonition-note-2"></a></p>
+</div>
+<div>
+<p>Gaffer 的预构建版本目前在 macOS 上不可用。</p>
+</div>
+</div>
+<h2 id="另见"><a class="header" href="#另见">另见</a></h2>
+<ul>
+<li><a href="%E5%85%A5%E9%97%A8/./%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8Gaffer.html">第一次启动Gaffer</a></li>
+<li><a href="%E5%85%A5%E9%97%A8/./setting_gaffer_command.html">设置&quot;gaffer&quot;环境变量</a></li>
+<li><a href="%E5%85%A5%E9%97%A8/./%E9%85%8D%E7%BD%AE%E7%AC%AC%E4%B8%89%E6%96%B9%E7%A8%8B%E5%BA%8F.html">为第三方应用程序配置</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第一次启动gaffer"><a class="header" href="#第一次启动gaffer">第一次启动Gaffer</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程搭建一个能够正常渲染的gaffer机器人"><a class="header" href="#教程搭建一个能够正常渲染的gaffer机器人">教程:搭建一个能够正常渲染的Gaffer机器人</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="设置gaffer环境变量"><a class="header" href="#设置gaffer环境变量">设置&quot;gaffer&quot;环境变量</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="为第三方应用程序配置"><a class="header" href="#为第三方应用程序配置">为第三方应用程序配置</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="如何使用节点"><a class="header" href="#如何使用节点">如何使用节点</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="box-node"><a class="header" href="#box-node">Box Node</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="spreadsheet-node---表格节点"><a class="header" href="#spreadsheet-node---表格节点">Spreadsheet Node - 表格节点</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contexts"><a class="header" href="#contexts">Contexts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="获取最佳性能"><a class="header" href="#获取最佳性能">获取最佳性能</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="使用性能监视器"><a class="header" href="#使用性能监视器">使用性能监视器</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程使用oslcode节点"><a class="header" href="#教程使用oslcode节点">教程:使用OSLCode节点</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程设置一个自定义的表格节点"><a class="header" href="#教程设置一个自定义的表格节点">教程:设置一个自定义的表格节点</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="场景"><a class="header" href="#场景">场景</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="场景剖析"><a class="header" href="#场景剖析">场景剖析</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="相机剖析"><a class="header" href="#相机剖析">相机剖析</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="camera"><a class="header" href="#camera">&quot;Camera&quot;</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="灯光链接"><a class="header" href="#灯光链接">灯光链接</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="二维图像的处理"><a class="header" href="#二维图像的处理">二维图像的处理</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="图像剖析"><a class="header" href="#图像剖析">图像剖析</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="如何使用python-scripting-api"><a class="header" href="#如何使用python-scripting-api">如何使用Python Scripting API</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python编辑器"><a class="header" href="#python编辑器">Python编辑器</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程使用python来编辑节点"><a class="header" href="#教程使用python来编辑节点">教程:使用Python来编辑节点</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程检查场景"><a class="header" href="#教程检查场景">教程:检查场景</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程启动配置01自定义全局的context变量"><a class="header" href="#教程启动配置01自定义全局的context变量">教程:启动配置01;自定义全局的Context变量</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程启动配置02自定义书签"><a class="header" href="#教程启动配置02自定义书签">教程:启动配置02;自定义书签</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="教程启动配置03自定义节点菜单"><a class="header" href="#教程启动配置03自定义节点菜单">教程:启动配置03;自定义节点菜单</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="界面"><a class="header" href="#界面">界面</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="如何控制与使用快捷键"><a class="header" href="#如何控制与使用快捷键">如何控制与使用快捷键</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="参考"><a class="header" href="#参考">参考</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="节点参考"><a class="header" href="#节点参考">节点参考</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gaffer"><a class="header" href="#gaffer">Gaffer</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferappleseed"><a class="header" href="#gafferappleseed">GafferAppleseed</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferarnold"><a class="header" href="#gafferarnold">GafferArnold</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gaffercycles"><a class="header" href="#gaffercycles">GafferCycles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferdispatch"><a class="header" href="#gafferdispatch">GafferDispatch</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferimage"><a class="header" href="#gafferimage">GafferImage</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferosl"><a class="header" href="#gafferosl">GafferOSL</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferscene"><a class="header" href="#gafferscene">GafferScene</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gafferusd"><a class="header" href="#gafferusd">GafferUSD</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gaffervdb"><a class="header" href="#gaffervdb">GafferVDB</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="脚本参考"><a class="header" href="#脚本参考">脚本参考</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="common-operations"><a class="header" href="#common-operations">Common Operations</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="常用命令示范"><a class="header" href="#常用命令示范">常用命令示范</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="字符串替代"><a class="header" href="#字符串替代">字符串替代</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="表达式"><a class="header" href="#表达式">表达式</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="set表达式"><a class="header" href="#set表达式">Set表达式</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="metadata"><a class="header" href="#metadata">Metadata</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="命令行参考"><a class="header" href="#命令行参考">命令行参考</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="browser"><a class="header" href="#browser">browser</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cli"><a class="header" href="#cli">cli</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dispatch"><a class="header" href="#dispatch">dispatch</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="env"><a class="header" href="#env">env</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="execute"><a class="header" href="#execute">execute</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gui"><a class="header" href="#gui">gui</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="license"><a class="header" href="#license">license</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python"><a class="header" href="#python">python</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="screengrab"><a class="header" href="#screengrab">screengrab</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stats"><a class="header" href="#stats">stats</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="test"><a class="header" href="#test">test</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="view"><a class="header" href="#view">view</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="context变量"><a class="header" href="#context变量">Context变量</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="发行版本"><a class="header" href="#发行版本">发行版本</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/pagetoc.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
